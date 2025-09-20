@@ -1,0 +1,152 @@
+<div class="card border-0">
+    <div class="card-body pb-1">
+        <form>
+            <div class="row align-items-end">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-3 custom-ngxdate">
+                                <label class="form-label">Choose Date</label>
+                                <app-date-range-picker />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label">State</label>
+                                <mat-select class="custom-mat-select select" placeholder="All">
+                                    <mat-option value="1">All</mat-option>
+                                    <mat-option value="1">Maharashtra</mat-option>
+                                    <mat-option value="1">Gujarat</mat-option>
+                                    <mat-option value="1">Rajasthan</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label">District</label>
+                                <mat-select class="custom-mat-select select" placeholder="All">
+                                    <mat-option value="1">All</mat-option>
+                                    <mat-option value="1">Nagpur</mat-option>
+                                    <mat-option value="1">Pune</mat-option>
+                                    <mat-option value="1">Nashik</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label">Taluka</label>
+                                <mat-select class="custom-mat-select select" placeholder="All">
+                                    <mat-option value="1">All</mat-option>
+                                    <mat-option value="1">Nagpur</mat-option>
+                                    <mat-option value="1">Hingna</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="mb-3">
+                        <button class="btn btn-primary w-100" type="submit"><i class="fa fa-search me-2"></i>Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- GRID LIST -->
+     <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
+              <div>
+                <h4>Farmer Beneficiary Details</h4>
+              </div>
+              <ul class="table-top-head">
+                <li class="me-2">
+                  <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
+                </li>
+                <li class="me-2">
+                  <a data-bs-toggle="tooltip" data-bs-placement="top" title="Excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
+                </li>
+                <li>
+                  <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i class="ti ti-printer"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table  datanew" (matSortChange)="sortData($event)" matSort matSortActive="Sno"
+                    matSortDirection="asc" matSortDisableClear>
+                    <thead class="thead-light">
+                      <tr>
+                        <th mat-sort-header="state">State</th>
+                        <th mat-sort-header="district">District</th>
+                        <th mat-sort-header="taluka">Taluka</th>
+                        <th mat-sort-header="village">Village</th>
+                        <th mat-sort-header="farmerName">Farmer Name</th>
+                        <th mat-sort-header="beneficiaryId">Beneficiary ID</th>
+                        <th mat-sort-header="shopNo">Shop No</th>
+                        <th mat-sort-header="rcNo">RC No</th>
+                        <th mat-sort-header="uniqueNoOld">Unique No (Old)</th>
+                        <th mat-sort-header="aadhaarNumber">Aadhaar Number</th>
+                        <th mat-sort-header="aadhaarReferenceNo">Aadhaar Reference No</th>
+                        <th mat-sort-header="firstName">First Name</th>
+                        <th mat-sort-header="middleName">Middle Name</th>
+                        <th mat-sort-header="surname">Surname</th>
+                        <th mat-sort-header="fullName">Full Name</th>
+                        <th mat-sort-header="bankName">Bank Name</th>
+                        <th mat-sort-header="accountNumber">Account Number</th>
+                        <th mat-sort-header="ifscCode">IFSC Code</th>
+                        <th mat-sort-header="beneficiaryName">Beneficiary Name</th>
+                        <th mat-sort-header="totalMembers">Total Members</th>
+                        <th mat-sort-header="amount">Amount</th>
+                        <th mat-sort-header="srNo">SR No</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @for (data of tableData; track data) {
+                        <tr>
+                          <td>{{data.state}}</td>
+                          <td >
+                            <div class="d-flex align-items-center">
+                              <!-- <a href="javascript:void(0);" class="avatar avatar-md">
+                                <img [src]="data.img" class="img-fluid" alt="product">
+                              </a> -->
+                              <a href="javascript:void(0);" class="text-dark mb-0 ms-2">{{data.state}}</a>
+                            </div>
+                          </td>
+                          
+                          <td>{{data.district}}</td>
+                          <td>{{data.taluka}}</td>
+                          <td>{{data.village}}</td>
+                          <td>{{data.farmerName}}</td>
+                          <td>{{data.beneficiaryId}}</td>
+                          <td>{{data.shopNo}}</td>
+                          <td>{{data.rcNo}}</td>
+                          <td>{{data.uniqueNoOld}}</td>
+                          <td>{{data.aadhaarNumber}}</td>
+                          <td>{{data.aadhaarReferenceNo}}</td>
+                          <td>{{data.firstName}}</td>
+                          <td>{{data.middleName}}</td>
+                          <td>{{data.surname}}</td>
+                          <td>{{data.fullName}}</td>
+                          <td>{{data.bankName}}</td>
+                          <td>{{data.accountNumber}}</td>
+                          <td>{{data.ifscCode}}</td>
+                          <td>{{data.beneficiaryName}}</td>
+                          <td>{{data.totalMembers}}</td>
+                          <td>{{data.amount}}</td>
+                          <td>{{data.srNo}}</td>
+                        </tr>
+                      }@if(tableData.length === 0){
+                        <tr>
+                            <td class="text-center" colspan="12">No Matching Data Found</td>
+                        </tr>
+                    }
+                    </tbody>
+                  </table>
+  
+                </div>
+                <app-custom-pagination></app-custom-pagination>
+              </div>
+            </div>
+</div>

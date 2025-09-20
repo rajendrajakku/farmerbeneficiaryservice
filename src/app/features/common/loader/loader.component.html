@@ -1,0 +1,14 @@
+<!-- @if (loading$ | async) {
+  <div class="global-loader">
+    <div class="whirly-loader"></div>
+  </div>
+} -->
+<!-- Full Page Loader -->
+<div *ngIf="type === 'page'" class="spinner_lay">
+  <div class="spinner"></div>
+</div>
+
+<!-- Content Loader (inside content area only) -->
+<div *ngIf="type === 'content'" class="content-loader">
+  <div class="spinner"></div>
+</div>
