@@ -129,6 +129,16 @@ export class SidebarService {
               route: '/farmer-beneficiary/CreateFarmerBeneficiary',
               base: 'farmer-beneficiary',
             },
+            {
+              menuValue: 'Approval',
+              route: '/farmer-beneficiary/ApprovalComponent',
+              base: 'farmer-beneficiary',
+            },
+            {
+              menuValue: 'Payment file Detail',
+              route: '/farmer-beneficiary/PaymentDetailComponent',
+              base: 'farmer-beneficiary',
+            },
           ],
         },
         // {
